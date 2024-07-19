@@ -1,15 +1,13 @@
 function spinWords(string) {
     const stringArray = string.split(' ')
-    const result = []
-    for (let str of stringArray) {
+    const result = stringArray.map(str => {
         if (str.length >= 5) {
-            result.push(str.split('').reverse().join(''))
+            return str.split('').reverse().join('')
         } else {
-            result.push(str)
+            return str
         }
-    }
-
-    return result.join(' ')
+    }).join(' ')
+    return result
 }
 
 spinWords("Hey fellow warriors")
