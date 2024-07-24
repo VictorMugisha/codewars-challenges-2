@@ -16,10 +16,8 @@
 import React, { useState } from 'react';
 
 const Counter = () => {
-  // Your state
   const [counter, setCounter] = useState(0);
 
-  // Your event handlers
   const increment = () => setCounter(counter + 1);
   const decrement = () => setCounter(counter - 1);
 
