@@ -18,15 +18,31 @@
 
 import React, {useState} from 'react';
 
-export class States extends React.Component {
-  constructor() {
-    super(); 
-  }
-  render() {
-    return <div className="status" />
-  } 
+import { Component } from 'react';
+
+// Class component version
+export class States extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            united: false
+        };
+        this.unite = this.unite.bind(this);
+    }
+
+    unite() {
+        this.setState({ united: true });
+    }
+
+    render() {
+        return (
+            <p>{this.state.united ? "Code for everyone" : "Make America code again"}</p>
+        );
+    }
 }
 
+
+// Function component version
 export function States() {
     const [united, setUnited] = useState(false)
     function unite() {
