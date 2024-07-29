@@ -1,16 +1,14 @@
 function squareUp(n) {
-    let result = [];
 
-    for (let i = 1; i <= n; i++) {
-        let block = Array(n).fill(0); // Create a block of length n filled with zeros
-        for (let j = 0; j < i; j++) {
-            block[n - 1 - j] = i - j; // Fill the block with decreasing numbers
-        }
-        result = result.concat(block); // Add the block to the result
-    }
-
-    return result;
-}
+    let res = [];
+  
+    for (let i = 1; i <= n; i++)
+      for (let j = n; j >= 1; j--)
+        res.push(j <= i ? j : 0);
+  
+    return res;
+        
+  }
 
 
 
