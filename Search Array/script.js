@@ -14,7 +14,6 @@
 
 
 var searchArray = function (arrayToSearch, query) {
-    // VALIDATION
     for (let array of arrayToSearch) {
         if (!Array.isArray(array) || array.length !== 2) {
             throw new Error("The input arrayToSearch is not valid")
@@ -25,7 +24,7 @@ var searchArray = function (arrayToSearch, query) {
         throw new Error("The querry is not valid")
     }
 
-    // SOLVING THE PROBLEM
+    // IMPLEMENTATION
     let strQuery = JSON.stringify(query)
     for (let [index, array] of arrayToSearch.entries()) {
         let strRep = JSON.stringify(array)
